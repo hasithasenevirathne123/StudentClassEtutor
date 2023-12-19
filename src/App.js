@@ -11,7 +11,8 @@ function App() {
   return (
     <div className="App">
       {/* Typography */}
-      {/* <header className="App-header">
+
+      <header className="App-header">
         <p>
           <Typography color='primary' gutterBottom variant='h1'>Hello world</Typography>
           <Typography color='secondary' gutterBottom variant='h2'>Hello world</Typography>
@@ -21,12 +22,12 @@ function App() {
           <Typography variant='body2'>Hello world</Typography>
           <Typography variant='caption'>Caption</Typography>
         </p>
-      </header> */}
+      </header>
      {/*Buttons */}
-      {/* <Button variant='text' href='mui.com' size='small'>Text</Button>
+      <Button variant='text' href='mui.com' size='small'>Text</Button>
       <Button variant='contained' size='large' color='secondary'>Contained</Button>
-      <Button variant='outlined' color='success'>outlined</Button> */}
-      {/* <Stack direction='row' spacing={2} justifyContent='center' margin={5}>
+      <Button variant='outlined' color='success'>outlined</Button>
+      <Stack direction='row' spacing={2} justifyContent='center' margin={5}>
 
         <Button variant='contained' size='large' color='primary' onClick={()=>{alert('added')}} startIcon={<AddCircleIcon/>}>Add Contact</Button>
         <Button variant='contained' size='large' color='success' startIcon={<AddToHomeScreenIcon/>}>HomePage</Button>
@@ -42,8 +43,8 @@ function App() {
         <TextField label="filled" variant='filled' />
         <TextField label="standard" variant='standard' helperText='Add something' type='password'/>
 
-      </Stack> */}
-      {/* <Stack direction='row' spacing={2} justifyContent='center' margin={5}>
+      </Stack>
+      <Stack direction='row' spacing={2} justifyContent='center' margin={5}>
       
       <TextField label='Money' variant='outlined' InputProps={{
         endAdornment: <InputAdornment position='start'><AddLocationIcon/></InputAdornment>
@@ -56,7 +57,7 @@ function App() {
        error = {!data}
        helperText= {!data ? 'required': 'done'}
        variant='outlined'/>
-      </Stack> */}
+      </Stack>
 
 
 <Stack direction='row' spacing={2} justifyContent='center' margin={5}>
