@@ -4,8 +4,10 @@ import { Typography, Button, IconButton, Stack, TextField, InputAdornment } from
 import AddToHomeScreenIcon from '@mui/icons-material/AddToHomeScreen';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
+import { useState } from 'react';
 
 function App() {
+  const [data, setData]= useState('')
   return (
     <div className="App">
 
@@ -50,9 +52,17 @@ function App() {
 
       <Stack direction='row' spacing={2} justifyContent='center' margin={5}>
       
-      <TextField label='size' variant='outlined' InputProps={{
-        startAdornment: <InputAdornment position='start'>H</InputAdornment>
+      <TextField label='Money' variant='outlined' InputProps={{
+        endAdornment: <InputAdornment position='start'><AddLocationIcon/></InputAdornment>
       }}/>
+
+      <TextField
+       label="input"
+       value={data}
+       onChange={e=>setData(e.target.value)}
+       error = {!data}
+       helperText= {!data ? 'required': 'done'}
+       variant='outlined'/>
       </Stack>
 
     </div>
