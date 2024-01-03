@@ -5,11 +5,37 @@ import AddToHomeScreenIcon from '@mui/icons-material/AddToHomeScreen';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
 import { useState } from 'react';
+import {createTheme, ThemeProvider} from "@mui/material";
+import { red, green } from '@mui/material/colors';
+function App() 
+{
+const theme = createTheme({
+  palette:{
+    primary:{
+      main:red[500]
+    },
+    color1:{
+      main:green[500],
+      preference:green[100]
+    }
+  },
+  typography:{
+   h4:{
+    fontSize: '6rem'
+   } 
+  }
+});
 
-function App() {
-  const [data, setData]= useState('')
   return (
   <div className="App">
+  <ThemeProvider theme={theme}>
+    <div className='App'>
+      <Typography className='text' color="primary.dark" variant='h4'>Student Learning System</Typography>
+      <Typography className='text' color="color1.preference " variant='h4'>Student Learning System</Typography>
+    </div>
+  </ThemeProvider>
+
+
      {/* Typography */}
 
       {/* <header className="App-header">
@@ -64,7 +90,7 @@ function App() {
       </Stack> */}
 
 
-    <Stack direction="row" spacing={2} justifyContent="center" margin={5}>
+    {/* <Stack direction="row" spacing={2} justifyContent="center" margin={5}>
 
     <FormControl>
 
@@ -80,6 +106,7 @@ function App() {
       value="C Programming"
       control={<Radio/>}
       label="C Programming"
+      color='Green'
       />
      <FormControlLabel
       value="JAVA"
@@ -89,22 +116,62 @@ function App() {
      <FormControlLabel
       value="Phython"
       control={<Radio/>}
-      label="python"
+      label="Python"
       />
      <FormControlLabel
-      value="Python"
+      value="Angular js"
       control={<Radio/>}
-      label="Python"
+      label="Angular js"
       />
       </RadioGroup>
 
     </FormControl>
 
-    </Stack>
+    </Stack> */}
+
+
+{/* <Stack direction="row" spacing={2} justifyContent="center" margin={5}>
+
+<FormControl>
+
+<FormLabel id='pl'>Programming Languages</FormLabel>
+  <RadioGroup
+  name='Programming language to learn'
+  aria-labelledby='Programming_language_to_learn'
+  value={data}
+  onChange={e => setData(e.target.value)}
+  row
+  >
+  <FormControlLabel
+  value="C Programming"
+  control={<Radio/>}
+  label="C Programming"
+  color='Green'
+  />
+ <FormControlLabel
+  value="JAVA"
+  control={<Radio/>}
+  label="JAVA"
+  />
+ <FormControlLabel
+  value="Phython"
+  control={<Radio/>}
+  label="Python"
+  />
+ <FormControlLabel
+  value="Angular js"
+  control={<Radio/>}
+  label="Angular js"
+  />
+  </RadioGroup>
+
+</FormControl>
+
+</Stack>
 
     <Stack direction='row' spacing={2} justifyContent='center' margin={5}>
       {data}
-    </Stack>
+    </Stack> */}
 </div>
   );
 }
