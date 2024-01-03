@@ -7,9 +7,12 @@ import AddLocationIcon from '@mui/icons-material/AddLocation';
 import { useState } from 'react';
 import {createTheme, ThemeProvider} from "@mui/material";
 import { red, green } from '@mui/material/colors';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { DarkMode } from '@mui/icons-material';
 function App() 
 {
 const theme = createTheme({
+
   palette:{
     primary:{
       main:red[500]
@@ -19,10 +22,20 @@ const theme = createTheme({
       preference:green[100]
     }
   },
+
   typography:{
    h4:{
-    fontSize: '6rem'
+    fontSize: '2rem'
    } 
+  },
+  components:{
+    MuiButton:{
+      defaultProps:{
+        disableRipple:true,
+        variant:'contained',
+        color:'color.preference'
+      }
+    }
   }
 });
 
@@ -32,6 +45,7 @@ const theme = createTheme({
     <div className='App'>
       <Typography className='text' color="primary.dark" variant='h4'>Student Learning System</Typography>
       <Typography className='text' color="color1.preference " variant='h4'>Student Learning System</Typography>
+      <Button startIcon={<DarkMode/>}  variant='contained'>DarkMode</Button>
     </div>
   </ThemeProvider>
 
