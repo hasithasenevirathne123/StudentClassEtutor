@@ -9,46 +9,26 @@ import {createTheme, ThemeProvider} from "@mui/material";
 import { red, green } from '@mui/material/colors';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { DarkMode } from '@mui/icons-material';
+import {CssBaseline} from '@mui/material'
+import { darkTheme, lightTheme } from './theme';
+import Box from  "@mui/material/Box";
+
 function App() 
 {
-const theme = createTheme({
-
-  palette:{
-    primary:{
-      main:red[500]
-    },
-    color1:{
-      main:green[500],
-      preference:green[100]
-    }
-  },
-
-  typography:{
-   h4:{
-    fontSize: '2rem'
-   } 
-  },
-  components:{
-    MuiButton:{
-      defaultProps:{
-        disableRipple:true,
-        variant:'contained',
-        color:'color.preference'
-      }
-    }
-  }
-});
-
+  const [theme, setTheme] = useState(true)
   return (
-  <div className="App">
-  <ThemeProvider theme={theme}>
-    <div className='App'>
-      <Typography className='text' color="primary.dark" variant='h4'>Student Learning System</Typography>
-      <Typography className='text' color="color1.preference " variant='h4'>Student Learning System</Typography>
-      <Button startIcon={<DarkMode/>}  variant='contained'>DarkMode</Button>
-    </div>
+  <ThemeProvider theme={theme ? lightTheme : darkTheme}>
+    <Box bgcolor="bw.main" sx={{height:'100vh'}}>
+      <Typography className='text' color="primary.main" variant='h4'>Student Learning System</Typography>
+      <Typography className='text' color="secondary.main" variant='h4'>Student Learning System</Typography>
+      <Button startIcon={<DarkMode/>}  variant='contained' onClick={()=>setTheme(!theme)}>DarkMode</Button>
+      </Box>
   </ThemeProvider>
 
+  );
+}
+
+export default App;
 
      {/* Typography */}
 
@@ -186,8 +166,5 @@ const theme = createTheme({
     <Stack direction='row' spacing={2} justifyContent='center' margin={5}>
       {data}
     </Stack> */}
-</div>
-  );
-}
 
-export default App;
+ 
