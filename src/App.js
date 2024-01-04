@@ -12,7 +12,21 @@ import { DarkMode } from '@mui/icons-material';
 import {CssBaseline} from '@mui/material'
 import { darkTheme, lightTheme } from './theme';
 import Box from  "@mui/material/Box";
+import {styled} from "@mui/material";
 
+const CustomizedType = styled(Typography)(({theme})=>({
+  color: theme.palette.primary.main,
+  '&:hover':{
+    color:theme.palette.secondary.main
+  }
+
+}))
+// `color:#000055;
+// :hover{
+//   color:#ff3d00;
+//   background:#afafaf
+// }
+// `
 function App() 
 {
   const [theme, setTheme] = useState(true)
@@ -22,6 +36,7 @@ function App()
       <Typography className='text' color="primary.main" variant='h4'>Student Learning System</Typography>
       <Typography className='text' color="secondary.main" variant='h4'>Student Learning System</Typography>
       <Button startIcon={<DarkMode/>}  variant='contained' onClick={()=>setTheme(!theme)}>DarkMode</Button>
+      <CustomizedType variant='h4'>Select</CustomizedType>
       </Box>
   </ThemeProvider>
 
