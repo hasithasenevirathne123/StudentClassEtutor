@@ -13,37 +13,110 @@ import {CssBaseline} from '@mui/material'
 import { darkTheme, lightTheme } from './theme';
 import Box from  "@mui/material/Box";
 import {styled} from "@mui/material";
+import {Table,TableBody,TableHead,TableCell,TableRow,TableContainer,Paper} from "@mui/material";
 
-const CustomizedType = styled(Typography)(({theme})=>({
-  color: theme.palette.primary.main,
-  '&:hover':{
-    color:theme.palette.secondary.main
-  }
 
-}))
+function createData(id,nic,email,firstname,lastname,gender,dateofbirth,age){
+  return {id, nic, email, firstname, lastname, gender, dateofbirth, gender, age}
+}
+const data = [
+  createData("1","970122672v","hasitha97@gmail.com","Hasitha","Senevirathne","Male","1997/01/12","26"),
+  createData("2","970122672v","hasitha97@gmail.com","Hasitha","Senevirathne","Male","1997/01/12","26"),
+  createData("3","970122672v","hasitha97@gmail.com","Hasitha","Senevirathne","Male","1997/01/12","26"),
+  createData("4","970122672v","hasitha97@gmail.com","Hasitha","Senevirathne","Male","1997/01/12","26"),
+  // {
+  //     id:'1',
+  //     nic:'970122672',
+  //     email:'hasitha97@gmail.com',
+  //     firstname:'Hasitha',
+  //     lastname:'Senevirathne',
+  //     gender:'Male',
+  //     dateofbirth:'1997/1/12',
+  //     age:'26' 
+  //  },
+ ];
+ 
+function App(){
+  return(
+    <div>
+      <div style={{backgroundColor:'#E8ECF4', height:'100vh', padding:10}}>
+      <TableContainer component={Paper} sx={{margin:5, width:1200}}>
+        <Table sx={{minWidth:650}}>
+          <TableHead>
+            <TableRow>
+              <TableCell>Id</TableCell>
+              <TableCell>Nic</TableCell>
+              <TableCell>Email</TableCell>
+              <TableCell>FirstName</TableCell>
+              <TableCell>LastName</TableCell>
+              <TableCell>Gender</TableCell>
+              <TableCell>DateofBirth</TableCell>
+              <TableCell>Age</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+           {data.map((row)=>(
+            <TableRow>
+              <TableCell>{row.id}</TableCell>
+              <TableCell>{row.nic}</TableCell>
+              <TableCell>{row.email}</TableCell>
+              <TableCell>{row.firstname}</TableCell>
+              <TableCell>{row.lastname}</TableCell>
+              <TableCell>{row.gender}</TableCell>
+              <TableCell>{row.dateofbirth}</TableCell>
+              <TableCell>{row.age}</TableCell>
+            </TableRow>
+           ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+// const CustomizedType = styled(Typography)(({theme})=>({
+//   color: theme.palette.primary.main,
+//   '&:hover':{
+//     color:theme.palette.secondary.main
+//   }
+// }))
+
 // `color:#000055;
 // :hover{
 //   color:#ff3d00;
 //   background:#afafaf
 // }
 // `
-function App() 
-{
-  const [theme, setTheme] = useState(true)
-  return (
-  <ThemeProvider theme={theme ? lightTheme : darkTheme}>
-    <Box bgcolor="bw.main" sx={{height:'100vh'}}>
-      <Typography className='text' color="primary.main" variant='h4'>Student Learning System</Typography>
-      <Typography className='text' color="secondary.main" variant='h4'>Student Learning System</Typography>
-      <Button startIcon={<DarkMode/>}  variant='contained' onClick={()=>setTheme(!theme)}>DarkMode</Button>
-      <CustomizedType variant='h4'>Select</CustomizedType>
-      </Box>
-  </ThemeProvider>
 
-  );
-}
+// function App() 
+// {
+//   const [theme, setTheme] = useState(true)
+//   return (
+//   <ThemeProvider theme={theme ? lightTheme : darkTheme}>
+//     <Box bgcolor="bw.main" sx={{height:'100vh'}}>
+//       <Typography className='text' color="primary.main" variant='h4'>Student Learning System</Typography>
+//       <Typography className='text' color="secondary.main" variant='h4'>Student Learning System</Typography>
+//       <Button startIcon={<DarkMode/>}  variant='contained' onClick={()=>setTheme(!theme)}>DarkMode</Button>
+//       <CustomizedType variant='h4'>Select</CustomizedType>
+//     </Box>
+//   </ThemeProvider>
 
-export default App;
+//   );
+// }
+
+
 
      {/* Typography */}
 
