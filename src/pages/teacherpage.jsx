@@ -228,8 +228,61 @@ function ResponsiveDrawer(props) {
     <>
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
+      <AppBar 
+     style={{ backgroundColor:"#F5F5F5", boxShadow:"none" }}
+     position="fixed"
+     sx={{
+       width: { sm: `calc(100% - ${drawerWidth}px)` },
+       ml: { sm: `${drawerWidth}px` },
+      
+     }}
+      >
+      <Toolbar>
+      <IconButton
+            color=""
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <>
+            <Typography sx={{ fontSize: "2rem",fontFamily:"Plus Jakarta Sans",fontWeight:"800", color:"black" }}>
+              Teachers
+            </Typography>
+          </>
 
-      <AppBar
+          <>
+            {/* <Tabs
+              sx={{ marginLeft: "auto" }}
+              indicatorColor="secondary"
+              textColor="inherit">
+
+              <Tab style={{color:"black"}} label="Home" />
+              <Tab style={{color:"black"}} label="Features" />
+              <Tab style={{color:"black"}} label="Pricing" />
+              <Tab style={{color:"black"}} label="About Us" />
+
+            </Tabs> */}
+
+            {/* <Badge  badgeContent={17} color="error">
+            <NotificationsIcon style={{color:"black", backgroundColor:"white", height:"30px", borderRadius:"20px"}} />
+          </Badge> */}
+
+            <Typography sx={{ marginLeft: "auto" }} variant="outlined" style={{color:"black"}}>
+              Naveen Pathiraja
+            </Typography>
+          
+            <Avatar src={pic2} sx={{ marginLeft: "10px", backgroundColor:"#d96767" }} variant="contained"/>
+            
+           
+          </>
+       
+      </Toolbar>
+    </AppBar>
+      {/* <AppBar
+         style={{ backgroundColor:"#F5F5F5", boxShadow:"none" }}
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
@@ -263,7 +316,7 @@ function ResponsiveDrawer(props) {
        
         </Toolbar>
 
-      </AppBar>
+      </AppBar> */}
 
       <Box
         component="nav"
@@ -308,7 +361,7 @@ function ResponsiveDrawer(props) {
           flexGrow: 1,
           p: 3,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-        
+           backgroundColor:"#F5F5F5"
           
         }}
       >

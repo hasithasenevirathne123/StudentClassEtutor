@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Checkbox,
@@ -25,9 +25,14 @@ import { red } from "@mui/material/colors";
 import { useNavigate } from "react-router-dom";
 import Landinpageimage from "./assets/landpageimage.png";
 const Landingpage = () => {
+
+    const[value, setValue] = React.useState('one');
     
   const navigate = useNavigate();
 
+  const handleChange = (value, newValue) =>{
+    setValue(newValue);
+  }
 
 
   return (
@@ -38,25 +43,27 @@ const Landingpage = () => {
             <Typography sx={{ fontSize: "2rem", paddingLeft: "10%", color:"black" }}>
               etutor
             </Typography>
-       
           </>
-    
+
           <>
             <Tabs
+              value={value}
+              onChange={handleChange}
               sx={{ marginLeft: "auto" }}
-              indicatorColor="secondary"
-              textColor="inherit"
-            
-             
-            >
+              indicatorColor="#d96767"
+              textColor="inherit">
+
               <Tab style={{color:"black"}} label="Home" />
               <Tab style={{color:"black"}} label="Features" />
               <Tab style={{color:"black"}} label="Pricing" />
               <Tab style={{color:"black"}} label="About Us" />
+
             </Tabs>
+
             <Button onClick={()=>{ navigate("/loginpage") }} sx={{ marginLeft: "auto" }} variant="outlined" color="error">
               Login
             </Button>
+
             <Button sx={{ marginLeft: "10px", backgroundColor:"#d96767" }} variant="contained" color="error">
              Register
             </Button>
@@ -104,30 +111,6 @@ const Landingpage = () => {
         </Grid>
       </Container>
   </React.Fragment>
-
-
-    // <>
-    //   <AppBar style={{ boxShadow: "none", backgroundColor:"white" }}>
-    //     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-    //       <div style={{flexDirection:"row"}}>
-    //         <Typography color="black" variant="h2" gutterBottom>
-    //         etutor
-    //         </Typography>
-    //       </div>
-    //       <div>
-    //       <Button
-    //         className="btn-reg"
-    //         style={{ backgroundColor: "#d96767" , margin:"20px"}}
-    //         variant="contained"
-    //       >
-    //         Register
-    //       </Button>
-    //       </div>
-    //     </div>
-    //   </AppBar>
-
-   
-    // </>
   );
 };
 

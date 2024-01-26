@@ -57,6 +57,7 @@ import LocalLibraryRoundedIcon from "@mui/icons-material/LocalLibraryRounded";
 import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
 import PaymentsIcon from "@mui/icons-material/Payments";
 import ClassIcon from "@mui/icons-material/Class";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate } from "react-router-dom";
 import img1 from "./assets/flask (3).png";
 import img2 from "./assets/physics.png";
@@ -69,6 +70,7 @@ import pic4 from './assets/4.png'
 import pic5 from './assets/5.png'
 import pic6 from './assets/6.png'
 import pic7 from './assets/7.png'
+
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
@@ -198,8 +200,65 @@ function ResponsiveDrawer(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar
-        style={{ backgroundColor: "#F5F5F5" }}
+      <AppBar 
+     style={{ backgroundColor:"#F5F5F5", boxShadow:"none" }}
+     position="fixed"
+     sx={{
+       width: { sm: `calc(100% - ${drawerWidth}px)` },
+       ml: { sm: `${drawerWidth}px` },
+      
+     }}
+      >
+      <Toolbar>
+      <IconButton
+            color=""
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <>
+            <Typography sx={{ fontSize: "2rem",fontFamily:"Plus Jakarta Sans",fontWeight:"800", color:"black" }}>
+              Add Class
+            </Typography>
+          </>
+
+          <>
+            {/* <Tabs
+              sx={{ marginLeft: "auto" }}
+              indicatorColor="secondary"
+              textColor="inherit">
+
+              <Tab style={{color:"black"}} label="Home" />
+              <Tab style={{color:"black"}} label="Features" />
+              <Tab style={{color:"black"}} label="Pricing" />
+              <Tab style={{color:"black"}} label="About Us" />
+
+            </Tabs> */}
+
+            {/* <Badge  badgeContent={17} color="error">
+            <NotificationsIcon style={{color:"black", backgroundColor:"white", height:"30px", borderRadius:"20px"}} />
+          </Badge> */}
+
+            <Typography sx={{ marginLeft: "auto" }} variant="outlined" style={{color:"black"}}>
+              Naveen Pathiraja
+            </Typography>
+          
+            <Avatar src={pic2} sx={{ marginLeft: "10px", backgroundColor:"#d96767" }} variant="contained"/>
+            
+           
+          </>
+       
+      </Toolbar>
+    </AppBar>
+
+
+
+
+      {/* <AppBar
+        style={{ backgroundColor: "#F5F5F5", boxShadow:"none" }}
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
@@ -216,7 +275,7 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Button>Back</Button>
+          <Button startIcon={<ArrowBackIcon/>}></Button>
           <Typography
             style={{
               fontSize: "48px",
@@ -229,7 +288,7 @@ function ResponsiveDrawer(props) {
             Add Class
           </Typography>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
@@ -274,7 +333,8 @@ function ResponsiveDrawer(props) {
           flexGrow: 1,
           p: 3,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-          
+          backgroundColor:"#F5F5F5",
+          height:"1000px"
         }}
       >
         <Toolbar />
@@ -756,6 +816,7 @@ function ResponsiveDrawer(props) {
            
           </Container>
         </Box>
+
         <Box sx={{ mt: 2, backgroundColor: "white", borderRadius: "20px" }}>
 
         <Accordion  style={{borderRadius:"20px"}}>

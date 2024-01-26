@@ -7,6 +7,8 @@ import {
   Item,
   Grid,
   FormControlLabel,
+  Tabs,
+  Tab
 } from "@mui/material";
 
 import { Container } from "@mui/icons-material";
@@ -17,7 +19,7 @@ import NotificationIcon from "@mui/icons-material/Notifications";
 import MenuIcon from "@mui/icons-material/Menu";
 import MuiDrawer from "@mui/material/Drawer";
 import { ChevronLeft } from "@mui/icons-material";
-
+import NotificationsIcon from '@mui/icons-material/Notifications';
 import HomeIcon from "@mui/icons-material/Home";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -168,12 +170,67 @@ function ResponsiveDrawer(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar
-        style={{ backgroundColor: "#F5F5F5" }}
+
+      <AppBar 
+     style={{ backgroundColor:"#F5F5F5", boxShadow:"none" }}
+     position="fixed"
+     sx={{
+       width: { sm: `calc(100% - ${drawerWidth}px)` },
+       ml: { sm: `${drawerWidth}px` },
+      
+     }}
+      >
+      <Toolbar>
+      <IconButton
+            color=""
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <>
+            <Typography sx={{ fontSize: "2rem",fontFamily:"Plus Jakarta Sans",fontWeight:"800", color:"black" }}>
+              Home
+            </Typography>
+          </>
+
+          <>
+            {/* <Tabs
+              sx={{ marginLeft: "auto" }}
+              indicatorColor="secondary"
+              textColor="inherit">
+
+              <Tab style={{color:"black"}} label="Home" />
+              <Tab style={{color:"black"}} label="Features" />
+              <Tab style={{color:"black"}} label="Pricing" />
+              <Tab style={{color:"black"}} label="About Us" />
+
+            </Tabs> */}
+
+            {/* <Badge  badgeContent={17} color="error">
+            <NotificationsIcon style={{color:"black", backgroundColor:"white", height:"30px", borderRadius:"20px"}} />
+          </Badge> */}
+
+            <Typography sx={{ marginLeft: "auto" }} variant="outlined" style={{color:"black"}}>
+              Naveen Pathiraja
+            </Typography>
+          
+            <Avatar src={pic2} sx={{ marginLeft: "10px", backgroundColor:"#d96767" }} variant="contained"/>
+            
+           
+          </>
+       
+      </Toolbar>
+    </AppBar>
+      {/* <AppBar
+        style={{ backgroundColor:"#F5F5F5", boxShadow:"none" }}
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
+         
         }}
       >
         <Toolbar>
@@ -199,11 +256,12 @@ function ResponsiveDrawer(props) {
             Overview
           </Typography>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
+      
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
@@ -316,6 +374,7 @@ function ResponsiveDrawer(props) {
 
             <Grid>
               <Grid item style={{ marginTop: "6rem" }}>
+                
                 <Typography
                   style={{ fontSize: "24px", fontFamily: "Plus Jakarta Sans" }}
                 >
@@ -535,6 +594,7 @@ function ResponsiveDrawer(props) {
                     </div>
                   </div>
                 </Card>
+
               </Grid>
             </Grid>
           </Grid>
@@ -640,11 +700,17 @@ function ResponsiveDrawer(props) {
                 </Typography>
                 <Stack direction="row" gap={2}>
                   <Card
-                    sx={{ maxWidth: 350, maxHeight: 700 }}
+                    sx={{ 
+                      maxWidth: 350, 
+                      maxHeight: 700,
+                      
+                    
+                    }}
                     style={{
-                      backgroundColor: "#F9E788",
+                      backgroundColor: "#C75C5C",
                       marginTop: "10px",
                       borderRadius: "20px",
+                      
                     }}
                   >
                     <CardContent style={{ marginLeft: "0px" }}>
@@ -677,7 +743,7 @@ function ResponsiveDrawer(props) {
                             <Avatar
                               alt="Travis Howard"
                               sx={{ width: 50, height: 50 }}
-                              variant="dot"
+                               src={pic1}
                             />
                             <Typography
                               style={{ fontSize: "12px", fontWeight: "bolder" }}
@@ -693,7 +759,7 @@ function ResponsiveDrawer(props) {
                   <Card
                     sx={{ maxWidth: 350, maxHeight: 700 }}
                     style={{
-                      backgroundColor: "#B4DEF0",
+                      backgroundColor: "#C75C5C",
                       marginTop: "10px",
                       borderRadius: "20px",
                     }}
@@ -728,7 +794,7 @@ function ResponsiveDrawer(props) {
                             <Avatar
                               alt="Travis Howard"
                               sx={{ width: 50, height: 50 }}
-                              variant="dot"
+                              src={pic2}
                             />
                             <Typography
                               style={{ fontSize: "12px", fontWeight: "bolder" }}
@@ -744,7 +810,7 @@ function ResponsiveDrawer(props) {
                   <Card
                     sx={{ maxWidth: 350, maxHeight: 700 }}
                     style={{
-                      backgroundColor: "#F6A695",
+                      backgroundColor: "#C75C5C",
                       marginTop: "10px",
                       borderRadius: "20px",
                     }}
@@ -779,7 +845,7 @@ function ResponsiveDrawer(props) {
                             <Avatar
                               alt="Travis Howard"
                               sx={{ width: 50, height: 50 }}
-                              variant="dot"
+                              src={pic4}
                             />
                             <Typography
                               style={{ fontSize: "12px", fontWeight: "bolder" }}

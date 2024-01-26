@@ -9,6 +9,8 @@ import Payments from  './pages/Paymentspage'
 import Settings from  './pages/settingspage'
 import Landingpage from  './pages/Landingpage'
 import Loginpage from  './pages/Login'
+import Viewclass from './pages/Viewclass'
+import Assignmentspage from './pages/Assignments'
 function App() {
   return (
 <BrowserRouter>
@@ -23,6 +25,8 @@ function App() {
   <Route path='/AddClass' element={<AddClass/>}/>
   <Route path='/Payments' element={<Payments/>}/>
   <Route path='/Settings' element={<Settings/>}/>
+  <Route path='/ViewClass' element={<Viewclass/>}/>
+  <Route path='/Assignmentspage' element={<Assignmentspage/>}/>
 
  
 </Routes>

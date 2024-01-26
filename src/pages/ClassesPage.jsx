@@ -195,8 +195,63 @@ function ResponsiveDrawer(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar
-        style={{ backgroundColor: "#F5F5F5" }}
+      <AppBar 
+     style={{ backgroundColor:"#F5F5F5", boxShadow:"none" }}
+     position="fixed"
+     sx={{
+       width: { sm: `calc(100% - ${drawerWidth}px)` },
+       ml: { sm: `${drawerWidth}px` },
+      
+     }}
+      >
+      <Toolbar>
+      <IconButton
+            color=""
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <>
+            <Typography sx={{ fontSize: "2rem",fontFamily:"Plus Jakarta Sans",fontWeight:"800", color:"black" }}>
+             Classes
+            </Typography>
+          </>
+
+          <>
+            {/* <Tabs
+              sx={{ marginLeft: "auto" }}
+              indicatorColor="secondary"
+              textColor="inherit">
+
+              <Tab style={{color:"black"}} label="Home" />
+              <Tab style={{color:"black"}} label="Features" />
+              <Tab style={{color:"black"}} label="Pricing" />
+              <Tab style={{color:"black"}} label="About Us" />
+
+            </Tabs> */}
+
+            {/* <Badge  badgeContent={17} color="error">
+            <NotificationsIcon style={{color:"black", backgroundColor:"white", height:"30px", borderRadius:"20px"}} />
+          </Badge> */}
+
+            <Typography sx={{ marginLeft: "auto" }} variant="outlined" style={{color:"black"}}>
+              Naveen Pathiraja
+            </Typography>
+          
+            <Avatar src={pic2} sx={{ marginLeft: "10px", backgroundColor:"#d96767" }} variant="contained"/>
+            
+           
+          </>
+       
+      </Toolbar>
+    </AppBar>
+
+
+      {/* <AppBar
+        style={{ backgroundColor:"#F5F5F5", boxShadow:"none" }}
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
@@ -226,7 +281,7 @@ function ResponsiveDrawer(props) {
             Classes
           </Typography>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
@@ -267,15 +322,16 @@ function ResponsiveDrawer(props) {
       </Box>
       <Box
         component="main"
+        style={{height:"1000px"}}
         sx={{
           flexGrow: 1,
           p: 3,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-        
+          backgroundColor:"#F5F5F5",
         }}
       >
         <Toolbar />
-        <Box sx={{ mt: 2,  justifyContent:"center",  backgroundColor: "white", borderRadius: "20px" }}>
+        <Box sx={{ mt: 2,  justifyContent:"center",  backgroundColor: "#F5F5F5", borderRadius: "20px" }}>
         <Typography
                 sx={{
                   ml: 5,
@@ -293,10 +349,12 @@ function ResponsiveDrawer(props) {
                 style={{border: "10px", padding:"20px" }}
               >
                 <Grid item flexDirection="row">
-                <Card
+                <Card onClick={()=>{
+                  navigate("/ViewClass")
+                }}
                     sx={{ maxWidth: 350, maxHeight: 700 }}
                     style={{
-                      backgroundColor: "#F9E788",
+                      backgroundColor: "#C75C5C",
                       marginTop: "10px",
                       borderRadius: "20px",
                     }}
@@ -341,7 +399,7 @@ function ResponsiveDrawer(props) {
                 <Card
                     sx={{ maxWidth: 350, maxHeight: 700 }}
                     style={{
-                      backgroundColor: "#B4DEF0",
+                      backgroundColor: "#C75C5C",
                       marginTop: "10px",
                       borderRadius: "20px",
                     }}
@@ -388,7 +446,7 @@ function ResponsiveDrawer(props) {
                 <Card
                     sx={{ maxWidth: 350, maxHeight: 700 }}
                     style={{
-                      backgroundColor: "#F6A695",
+                      backgroundColor: "#C75C5C",
                       marginTop: "10px",
                       borderRadius: "20px",
                     }}
