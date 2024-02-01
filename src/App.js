@@ -11,6 +11,7 @@ import Landingpage from  './pages/Landingpage'
 import Loginpage from  './pages/Login'
 import Viewclass from './pages/Viewclass'
 import Assignmentspage from './pages/Assignments'
+import ViewSubject from './pages/ViewSubject'
 function App() {
   return (
 <BrowserRouter>
@@ -27,6 +28,7 @@ function App() {
   <Route path='/Settings' element={<Settings/>}/>
   <Route path='/ViewClass' element={<Viewclass/>}/>
   <Route path='/Assignmentspage' element={<Assignmentspage/>}/>
+  <Route path='/ViewSubject' element={<ViewSubject/>}/>
 
  
 </Routes>

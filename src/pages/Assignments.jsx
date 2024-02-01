@@ -318,16 +318,20 @@ function ResponsiveDrawer(props) {
                     <div>
                       <Grid item flexDirection="row">
                         <Typography
-                          variant="h5"
-                          style={{ fontWeight: "bolder" }}
+                          style={{ fontWeight: 700, fontFamily:"Poppins, sans-serif", fontSize:"32px" }}
                         >
                           Chemistry
                         </Typography>
-                        <CardContent style={{ fontSize: "16px" }}>
+                        <CardContent style={{ fontSize: "16px",fontFamily:"Poppins, sans-serif",fontWeight:400 }}>
                           Check your plagiarism level from the turnitin reports.
                           If your plagiarism level is more than 20% you need to
                           perform a resubmission
                         </CardContent>
+                        <Typography
+                          style={{ fontWeight: 400, fontFamily:"Poppins, sans-serif", fontSize:"14px" }}
+                        >
+                          Attachments
+                        </Typography>
 
                         <CardActions></CardActions>
                       </Grid>
@@ -360,8 +364,8 @@ function ResponsiveDrawer(props) {
                         <Typography
                           variant="h5"
                           style={{
-                            fontWeight: "700",
-                            fontFamily: "Inter",
+                            fontWeight: 700,
+                            fontFamily: "Poppins, sans-serif",
                             fontSize: "16px",
                           }}
                         >
@@ -369,11 +373,10 @@ function ResponsiveDrawer(props) {
                         </Typography>
                         <CardContent style={{ fontSize: "16px" }}>
                           <Typography
-                            variant="h5"
                             style={{
-                              fontWeight: "700",
-                              fontFamily: "Inter",
-                              fontSize: "20px",
+                              fontWeight: "600",
+                              fontFamily: "Poppins, sans-serif",
+                              fontSize: "16px",
                             }}
                           >
                             Upload Assignment
@@ -388,8 +391,8 @@ function ResponsiveDrawer(props) {
                           <Typography
                             variant="h5"
                             style={{
-                              fontWeight: "600",
-                              fontFamily: "Plus Jakarta Sans",
+                              fontWeight:600,
+                              fontFamily: "Poppins, sans-serif",
                               fontSize: "16px",
                               marginTop: "10px",
                               width:"100%"
@@ -421,9 +424,11 @@ function ResponsiveDrawer(props) {
                            variant="contained"  
                           style={{width:"100%", 
                           backgroundColor:"#C75C5C", 
-                          fontFamily:"Plus Jakarta Sans"}}
-                          >
-                            Upload
+                          fontFamily:"Poppins, sans-serif",
+                          fontWeight:800
+                        
+                        }}
+                          >Submit
                           </Button>
                         </CardActions>
                       </Grid>
@@ -437,108 +442,6 @@ function ResponsiveDrawer(props) {
             </Grid>
           </Grid>
         </Container>
-
-        {/* <Grid container sx={{ mt: 2 }}>
-          <Grid item lg={6} md={6} sm={12} xs={12}>
-            <Card
-              variant="outlined"
-              style={{
-                width: "95%",
-                borderRadius: "20px",
-                height: "90%",
-                position: "static",
-              }}
-              sx={{ backgroundColor: "white" }}
-            >
-              <CardContent>
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <div>
-                    <Grid item flexDirection="row">
-                      <Typography variant="h5" style={{ fontWeight: "bolder" }}>
-                        Chemistry
-                      </Typography>
-                      <CardContent style={{ fontSize: "16px" }}>
-                        Check your plagiarism level from the turnitin reports.
-                        If your plagiarism level is more than 20% you need to
-                        perform a resubmission
-                      </CardContent>
-
-                      <CardActions></CardActions>
-                    </Grid>
-                  </div>
-                  <div></div>
-                </div>
-              </CardContent>
-
-              <CardActions style={{ justifyContent: "end" }}></CardActions>
-            </Card>
-          </Grid>
-        </Grid> */}
-
-        {/* <Grid container sx={{ mt: 2 }}>
-        <Grid item lg={6} md={6} sm={12} xs={12}>
-            <Card
-              variant="outlined"
-              style={{
-                width: "90%",
-                borderRadius: "20px",
-                height: "90%",
-                position: "static",
-              }}
-              sx={{ backgroundColor: "white" }}
-            >
-              <CardContent>
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <div>
-                    <Grid item flexDirection="row">
-                      <Typography
-                        variant="h5"
-                        style={{
-                          fontWeight: "700",
-                          fontFamily: "Inter",
-                          fontSize: "16px",
-                        }}
-                      >
-                        Assignment Submission
-                      </Typography>
-                      <CardContent style={{ fontSize: "16px" }}>
-                        <div>
-                          <TextField
-                            type="file"
-                            variant="outlined"
-                            value={inputValue}
-                            onChange={handleInputChange}
-                          />
-
-                        
-                        </div>
-
-                        <Grid sx={{ mt: 5 }}>
-                          <Typography style={{fontFamily:"Plus Jakarta Sans", fontWeight:600}}>Notes</Typography>
-                          <TextField
-                          
-                            id="outlined-multiline-flexible"
-                            multiline
-                            fullWidth
-                         
-                            variant="outlined"
-                          />
-                        </Grid>
-                      </CardContent>
-                    </Grid>
-                  </div>
-                  <div></div>
-                </div>
-              </CardContent>
-
-              <CardActions style={{ justifyContent: "end" }}></CardActions>
-            </Card>
-          </Grid>
-        </Grid> */}
       </Box>
     </Box>
   );

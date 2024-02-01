@@ -215,7 +215,7 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
           <>
-            <Typography sx={{ fontSize: "2rem",fontFamily:"Plus Jakarta Sans",fontWeight:"800", color:"black" }}>
+            <Typography sx={{ fontSize: "36px",fontFamily:"Poppins, sans-serif",fontWeight:"600", color:"black" }}>
              Classes
             </Typography>
           </>
@@ -336,38 +336,40 @@ function ResponsiveDrawer(props) {
                 sx={{
                   ml: 5,
                   fontWeight: 600,
-                  fontFamily: "Plus Jakarta Sans",
-                  fontSize: 24,
+                  fontFamily: "Poppins, sans-serif",
+                  fontSize: "24px",
                 }}
               >
                MyClasses
               </Typography>
-        <Grid>
+              <Grid>
+
               <Grid
                 container
                 gap={4}
                 style={{border: "10px", padding:"20px" }}
               >
                 <Grid item flexDirection="row">
+
                 <Card onClick={()=>{
                   navigate("/ViewClass")
                 }}
-                    sx={{ maxWidth: 350, maxHeight: 700 }}
-                    style={{
-                      backgroundColor: "#C75C5C",
-                      marginTop: "10px",
-                      borderRadius: "20px",
-                    }}
+                style={{
+                  backgroundColor: "#E16969",
+                  marginTop: "10px",
+                  borderRadius: "20px",
+                  height:"201px",
+                  width:"210px"
+                }}
                   >
-                    <CardContent style={{ marginLeft: "0px" }}>
+                    <CardContent>
                       <Grid container>
                         <Grid item lg={6} md={6} sm={12} xs={12}>
-                          <Typography
-                            style={{ fontWeight: 700, fontSize: "24px" ,fontFamily:"Plus Jakarta Sans" }}
+                          <Typography style={{ fontWeight: 700, fontSize: "24px" ,fontFamily:"Poppins, sans-serif", color:"white" }}
                           >
                             Chemistry
                           </Typography>
-                          <Typography  style={{ fontWeight: 500, fontSize: "16px" ,fontFamily:"Plus Jakarta Sans" }} variant="h7">
+                          <Typography  style={{ fontWeight: 500, fontSize: "16px" ,fontFamily:"Poppins, sans-serif", color:"white" }} >
                         Grade 12
                       </Typography>
                         </Grid>
@@ -384,7 +386,7 @@ function ResponsiveDrawer(props) {
                               src={pic1}
                             />
                             <Typography
-                              style={{ fontSize: "12px", fontWeight: "bolder" }}
+                              style={{ fontSize: "16px", fontWeight: "700", fontFamily:"Poppins, sans-serif", color:"white" }}
                             >
                               Jagath Chandana
                             </Typography>
@@ -396,70 +398,26 @@ function ResponsiveDrawer(props) {
                 </Grid>
 
                 <Grid item flexDirection="row">
-                <Card
-                    sx={{ maxWidth: 350, maxHeight: 700 }}
-                    style={{
-                      backgroundColor: "#C75C5C",
-                      marginTop: "10px",
-                      borderRadius: "20px",
-                    }}
+
+                <Card onClick={()=>{
+                  navigate("/ViewClass")
+                }}
+                style={{
+                  backgroundColor: "#E16969",
+                  marginTop: "10px",
+                  borderRadius: "20px",
+                  height:"201px",
+                  width:"210px"
+                }}
                   >
-                    <CardContent style={{ marginLeft: "0px" }}>
+                    <CardContent>
                       <Grid container>
                         <Grid item lg={6} md={6} sm={12} xs={12}>
-                          <Typography
-                          style={{ fontWeight: 700, fontSize: "24px" ,fontFamily:"Plus Jakarta Sans" }}
+                          <Typography style={{ fontWeight: 700, fontSize: "24px" ,fontFamily:"Poppins, sans-serif", color:"white" }}
                           >
                             Physics
                           </Typography>
-                          <Typography style={{ fontWeight: 500, fontSize: "16px" ,fontFamily:"Plus Jakarta Sans" }} gutterBottom variant="h7" component="div">
-                        Grade 12
-                      </Typography>
-                        </Grid>
-                      </Grid>
-
-                     
-                    </CardContent>
-                    <CardActions>
-                      <Grid container>
-                        <Grid item lg={6} md={6} sm={12} xs={12}>
-                          <Stack direction="row" spacing={2}>
-                            <Avatar
-                              alt="Travis Howard"
-                              sx={{ width: 50, height: 50 }}
-                              variant="dot"
-                              src={pic2}
-                            />
-                            <Typography
-                              style={{ fontSize: "12px", fontWeight: "bolder" }}
-                            >
-                              Binura Binduhewa
-                            </Typography>
-                          </Stack>
-                        </Grid>
-                      </Grid>
-                    </CardActions>
-                  </Card>
-                </Grid>
-
-                <Grid item flexDirection="row">
-                <Card
-                    sx={{ maxWidth: 350, maxHeight: 700 }}
-                    style={{
-                      backgroundColor: "#C75C5C",
-                      marginTop: "10px",
-                      borderRadius: "20px",
-                    }}
-                  >
-                    <CardContent style={{ marginLeft: "0px" }}>
-                      <Grid container>
-                        <Grid item lg={6} md={6} sm={12} xs={12}>
-                          <Typography
-                          style={{ fontWeight: 700, fontSize: "24px" ,fontFamily:"Plus Jakarta Sans" }}
-                          >
-                            Combined
-                          </Typography>
-                          <Typography style={{ fontWeight: 500, fontSize: "16px" ,fontFamily:"Plus Jakarta Sans" }} variant="h7" component="div">
+                          <Typography  style={{ fontWeight: 500, fontSize: "16px" ,fontFamily:"Poppins, sans-serif", color:"white" }} >
                         Grade 12
                       </Typography>
                         </Grid>
@@ -476,7 +434,55 @@ function ResponsiveDrawer(props) {
                               src={pic1}
                             />
                             <Typography
-                              style={{ fontSize: "12px", fontWeight: "bolder" }}
+                              style={{ fontSize: "16px", fontWeight: "700", fontFamily:"Poppins, sans-serif", color:"white" }}
+                            >
+                              Binura Binduhewa
+                            </Typography>
+                          </Stack>
+                        </Grid>
+                      </Grid>
+                    </CardActions>
+                  </Card>
+                </Grid>
+
+                <Grid item flexDirection="row">
+
+                <Card onClick={()=>{
+                  navigate("/ViewClass")
+                }}
+                style={{
+                  backgroundColor: "#E16969",
+                  marginTop: "10px",
+                  borderRadius: "20px",
+                  height:"201px",
+                  width:"210px"
+                }}
+                  >
+                    <CardContent>
+                      <Grid container>
+                        <Grid item lg={6} md={6} sm={12} xs={12}>
+                          <Typography style={{ fontWeight: 700, fontSize: "24px" ,fontFamily:"Poppins, sans-serif", color:"white" }}
+                          >
+                           Combined
+                          </Typography>
+                          <Typography  style={{ fontWeight: 500, fontSize: "16px" ,fontFamily:"Poppins, sans-serif", color:"white" }} >
+                        Grade 12
+                      </Typography>
+                        </Grid>
+                      </Grid>
+                    </CardContent>
+                    <CardActions>
+                      <Grid container>
+                        <Grid item lg={6} md={6} sm={12} xs={12}>
+                          <Stack direction="row" spacing={2}>
+                            <Avatar
+                              alt="Travis Howard"
+                              sx={{ width: 50, height: 50 }}
+                              variant="dot"
+                              src={pic1}
+                            />
+                            <Typography
+                              style={{ fontSize: "16px", fontWeight: "700", fontFamily:"Poppins, sans-serif", color:"white" }}
                             >
                               Tharindu Silva
                             </Typography>
@@ -485,8 +491,9 @@ function ResponsiveDrawer(props) {
                       </Grid>
                     </CardActions>
                   </Card>
-
                 </Grid>
+
+               
 
                 <Grid item flexDirection="row">
 

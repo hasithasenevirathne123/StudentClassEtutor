@@ -208,7 +208,6 @@ function ResponsiveDrawer(props) {
               View Class
             </Typography>
           </>
-        
 
           <>
             <Typography
@@ -281,6 +280,7 @@ function ResponsiveDrawer(props) {
         <Grid container>
           <Grid
             item
+            flexDirection="row"
             lg={6}
             md={6}
             sm={12}
@@ -289,74 +289,139 @@ function ResponsiveDrawer(props) {
           >
             <Card
               variant="outlined"
-              style={{ width: "100%", borderRadius: "20px" }}
+              style={{ width: "1192px", height: "180px", borderRadius: "20px" }}
             >
-              <CardContent>
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
+             
+                <Grid
+                  container
+                  rowSpacing={1}
+                  columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                  style={{marginLeft:"0px", marginTop:"0px"}}
                 >
-                  <div>
-                    <Grid item flexDirection="row">
-                      <Typography variant="h5" style={{ fontWeight: "bolder" }}>
-                        Chemistry
-                      </Typography>
-                      <Typography variant="h5" style={{ fontWeight: "bolder" }}>
-                        <label style={{ fontSize: "16px" }}>Grade 12</label>
-                        <CardActions>
-                          <Button
-                            variant="outlined"
-                            color="error"
-                            style={{
-                              borderRadius: "36px",
-                              justifyContent: "start",
-                            }}
-                          >
-                            Theory
-                          </Button>
-                        </CardActions>
-                      </Typography>
-                    </Grid>
-                  </div>
-                 
-                  <div>
-                    <Typography variant="h6" gutterBottom>
-                      Started at:
+                  <Grid item xs={2}>
+                    <Typography
+                      sx={{
+                        ml: 0,
+                        fontWeight: 600,
+                        fontFamily:"Poppins, sans-serif",
+                        fontSize: "40px",
+                      }}
+                    >
+                      Chemistry
                     </Typography>
-                  </div>
-                </div>
-              </CardContent>
+                    
+                  </Grid>
 
-              <CardActions style={{ justifyContent: "end" }}>
-                <Typography style={{ marginRight: "auto" }}>
-                  By Shiran
-                </Typography>
-                <Button
-                  style={{
-                    backgroundColor: "#d96767",
-                    borderRadius: "12px",
-                    height: "60px",
-                    width: "180px",
-                    label: "Join Now",
-                  }}
-                  variant="contained"
-                  endIcon={<TrendingFlatIcon />}
-                >
-                  Join Now
-                </Button>
-              </CardActions>
+                  <Grid item xs={2}>
+                      <Button
+                        variant="outlined"
+                        color="error"
+                        style={{
+                          borderRadius: "36px",
+                          justifyContent: "start",
+                        }}
+                      >
+                        Theory
+                      </Button>
+                  </Grid>
+
+                  <Grid item xs={2}>
+                    <div>
+                    <p style={{ margin: 0, fontWeight:400, fontSize:"14px",fontFamily:"Poppins, sans-serif" }}>Date</p>
+                    <p style={{ margin: 0, fontWeight:700, fontSize:"20px",fontFamily:"Poppins, sans-serif" }}>Every Friday</p>
+                  </div>
+                  </Grid>
+
+                  <Grid item xs={4}>
+                  <div>
+                    <p style={{ margin: 0, fontWeight:400, fontSize:"14px" }}>Time</p>
+                    <p style={{ margin: 0, fontWeight:700, fontSize:"20px" }}>4.30PM - 6.30PM </p>
+                  </div>
+                  </Grid>
+
+                  <Grid item xs={3}>
+                  <Typography
+                      sx={{
+                        ml: 0,
+                        fontWeight: 700,
+                        fontFamily:"Poppins, sans-serif",
+                        fontSize: "24px",
+                      }}
+                    >
+                      Grade 12
+                    </Typography>
+                  </Grid>
+                </Grid>
+
+                <Grid flexDirection="row">
+                <div>
+                  <Avatar
+                              alt="Travis Howard"
+                              style={{ width: 50, height:50, marginLeft:"2rem" }}
+                              variant="dot"
+                              src={pic1}
+                            />
+                  </div>
+                  {/* <Typography
+                      sx={{
+                        ml: 0,
+                        fontWeight: 400,
+                        fontFamily: "Plus Jakarta Sans",
+                        fontSize: 20,
+                      }}
+                    >
+                      Jagath Chandana
+                    </Typography> */}
+                </Grid>
+{/* 
+                  <Grid item xs={2}>
+                  <div>
+                  <Avatar
+                              alt="Travis Howard"
+                              style={{ width: 50, height:50, marginLeft:"5px" }}
+                              variant="dot"
+                              src={pic1}
+                            />
+                  </div>
+                  </Grid> */}
+
+                  {/* <Grid item xs={2}>
+                  <Typography
+                      sx={{
+                        ml: 0,
+                        fontWeight: 600,
+                        fontFamily: "Plus Jakarta Sans",
+                        fontSize: 24,
+                      }}
+                    >
+                      Jagath Chandana
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={2}>
+                  <Typography
+                      sx={{
+                        ml: 0,
+                        fontWeight: 600,
+                        fontFamily: "Plus Jakarta Sans",
+                        fontSize: 24,
+                      }}
+                    >
+                      Jagath Chandana
+                    </Typography>
+                  </Grid> */}
+           
             </Card>
-            
           </Grid>
         </Grid>
 
-        <Grid container sx={{ mt: 10 }}>
+        <Grid container sx={{ mt:2}}>
           <Grid item lg={6} md={6} sm={12} xs={12}>
             <Typography
               sx={{
                 ml: 0,
                 fontWeight: 600,
-                fontFamily: "Plus Jakarta Sans",
-                fontSize: 24,
+                fontFamily: "Poppins, sans-serif",
+                fontSize: "24px",
               }}
             >
               Course Content
@@ -364,7 +429,7 @@ function ResponsiveDrawer(props) {
 
             <Card
               variant="outlined"
-              style={{ width: "90%", borderRadius: "20px", height: "90%" }}
+              style={{ width: "550px", height:"398px", borderRadius: "20px" }}
               sx={{ backgroundColor: "white" }}
             >
               <CardContent>
@@ -373,10 +438,10 @@ function ResponsiveDrawer(props) {
                 >
                   <div>
                     <Grid item flexDirection="row">
-                      <Typography variant="h5" style={{ fontWeight: "bolder" }}>
+                      <Typography  style={{ fontWeight:700, fontFamily:"Poppins, sans-serif", fontSize:"20px" }}>
                         Chemistry
                       </Typography>
-                      <CardContent style={{ fontSize: "16px" }}>
+                      <CardContent style={{ fontSize: "16px",fontFamily:"Poppins, sans-serif",fontWeight:400 }}>
                         Polymers: Organic polymers (polyphenols, polyvinyls),
                         Classification and basis of classification, Polymer
                         structure; Polymerization mechanisms, Thermal behavior,
@@ -391,17 +456,17 @@ function ResponsiveDrawer(props) {
                         pyrethroids, Toxicity, Environmental fate, pesticide
                         formulations.
                       </CardContent>
-                      <Typography variant="h5" style={{ fontWeight: "bolder" }}>
+                      {/* <Typography style={{ fontWeight: 700, fontFamily:"Poppins, sans-serif",fontSize:"16px" }}>
                         Chemistry
                       </Typography>
-                      <CardContent style={{ fontSize: "16px" }}>
+                      <CardContent style={{ fontSize: "16px",fontFamily:"Poppins, sans-serif",fontWeight:400  }}>
                         Polymers: Organic polymers (polyphenols, polyvinyls),
                         Classification and basis of classification, Polymer
                         structure; Polymerization mechanisms, Thermal behavior,
                         Types of interactions in polymers. Chemical industry:
                         paints, emulsions, colloids, synthetic materials, soap
                         and detergents formulations.
-                      </CardContent>
+                      </CardContent> */}
                       <CardActions></CardActions>
                     </Grid>
                   </div>
@@ -432,29 +497,56 @@ function ResponsiveDrawer(props) {
                 </Button> */}
               </CardActions>
             </Card>
-          </Grid>
 
-          <Grid item lg={6} md={6} sm={12} xs={12}>
+          <Box sx={{ mt: 10, backgroundColor: "white", borderRadius: "20px" }}>
+          <Accordion  style={{borderRadius:"20px"}}>
+            <AccordionSummary
+              expandIcon={<ExpandMore />}
+              aria-controls="panel1-content"
+              id="panel1-header"
+            >
+              <Typography
+                sx={{
+                  ml: 5,
+                  fontWeight: 800,
+                  fontFamily: "Plus Jakarta Sans",
+                  fontSize: 20,
+                }}
+              >
+               Past Recording
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+            
+            </AccordionDetails>
+          </Accordion>
+        </Box>
+          </Grid>
+          
+
+          <Grid item lg={6} md={6} sm={12} xs={12} sx={{ml:0}}>
             <Typography
               sx={{
                 ml: 0,
                 fontWeight: 600,
-                fontFamily: "Plus Jakarta Sans",
-                fontSize: 24,
+                fontFamily: "Poppins, sans-serif",
+                fontSize:"24px",
               }}
             >
               Assignments
             </Typography>
 
-            <Card onClick={()=>{
-              navigate("/Assignmentspage")
-            }}
+            <Card
+              onClick={() => {
+                navigate("/Assignmentspage");
+              }}
               variant="outlined"
               style={{
-                width: "90%",
-                height: "",
+                width: "510px",
+                height: "163px",
                 marginBottom: "8px",
                 borderRadius: "20px",
+              
               }}
             >
               <CardContent>
@@ -467,9 +559,10 @@ function ResponsiveDrawer(props) {
                   <div>
                     <Typography
                       style={{
-                        fontWeight: "bolder",
-                        fontSize: "24px",
-                        fontFamily: "Plus Jakarta Sans",
+                        fontWeight:700,
+                        fontSize: "20px",
+                        fontFamily: "Poppins, sans-serif",
+                        
                       }}
                     >
                       Biology
@@ -478,7 +571,8 @@ function ResponsiveDrawer(props) {
                     <Typography
                       variant="h5"
                       style={{
-                        fontFamily: "Plus Jakarta Sans",
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight:400,
                         fontSize: "16px",
                         textAlign: "left",
                       }}
@@ -489,8 +583,8 @@ function ResponsiveDrawer(props) {
                     </Typography>
                   </div>
                   <div>
-                    <p style={{ margin: 0 }}>Due on</p>
-                    <p style={{ margin: 0 }}>2024.01.24</p>
+                    <p style={{ margin: 0 , fontFamily:"Poppins, sans-serif", fontWeight:400, fontSize:"14px"}}>Due on</p>
+                    <p style={{ margin: 0 , fontFamily:"Poppins, sans-serif", fontWeight:700, fontSize:"16px"}}>2024.01.24</p>
                   </div>
                 </div>
               </CardContent>
@@ -506,10 +600,11 @@ function ResponsiveDrawer(props) {
             <Card
               variant="outlined"
               style={{
-                width: "90%",
-                height: "",
+                width: "510px",
+                height: "163px",
                 marginBottom: "8px",
                 borderRadius: "20px",
+                
               }}
             >
               <CardContent>
@@ -522,9 +617,10 @@ function ResponsiveDrawer(props) {
                   <div>
                     <Typography
                       style={{
-                        fontWeight: "bolder",
-                        fontSize: "24px",
-                        fontFamily: "Plus Jakarta Sans",
+                        fontWeight:700,
+                        fontSize: "20px",
+                        fontFamily: "Poppins, sans-serif",
+                        
                       }}
                     >
                       Chemistry
@@ -533,7 +629,7 @@ function ResponsiveDrawer(props) {
                     <Typography
                       variant="h5"
                       style={{
-                        fontFamily: "Plus Jakarta Sans",
+                        fontFamily: "Poppins, sans-serif",
                         fontSize: "16px",
                       }}
                     >
@@ -543,8 +639,8 @@ function ResponsiveDrawer(props) {
                     </Typography>
                   </div>
                   <div>
-                    <p style={{ margin: 0 }}>Due on</p>
-                    <p style={{ margin: 0 }}>2024.01.24</p>
+                    <p style={{ margin: 0 , fontFamily:"Poppins, sans-serif", fontWeight:400, fontSize:"14px"}}>Due on</p>
+                    <p style={{ margin: 0 , fontFamily:"Poppins, sans-serif", fontWeight:700, fontSize:"16px"}}>2024.01.24</p>
                   </div>
                 </div>
               </CardContent>
@@ -560,10 +656,11 @@ function ResponsiveDrawer(props) {
             <Card
               variant="outlined"
               style={{
-                width: "90%",
-                height: "",
+                width: "510px",
+                height: "163px",
                 marginBottom: "8px",
                 borderRadius: "20px",
+                
               }}
             >
               <CardContent>
@@ -576,9 +673,10 @@ function ResponsiveDrawer(props) {
                   <div>
                     <Typography
                       style={{
-                        fontWeight: "bolder",
-                        fontSize: "24px",
-                        fontFamily: "Plus Jakarta Sans",
+                        fontWeight:700,
+                        fontSize: "20px",
+                        fontFamily: "Poppins, sans-serif",
+                        
                       }}
                     >
                       Physics
@@ -587,7 +685,8 @@ function ResponsiveDrawer(props) {
                     <Typography
                       variant="h5"
                       style={{
-                        fontFamily: "Plus Jakarta Sans",
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight:400,
                         fontSize: "16px",
                       }}
                     >
@@ -597,8 +696,8 @@ function ResponsiveDrawer(props) {
                     </Typography>
                   </div>
                   <div>
-                    <p style={{ margin: 0 }}>Due on</p>
-                    <p style={{ margin: 0 }}>2024.01.24</p>
+                  <p style={{ margin: 0 , fontFamily:"Poppins, sans-serif", fontWeight:400, fontSize:"14px"}}>Due on</p>
+                    <p style={{ margin: 0 , fontFamily:"Poppins, sans-serif", fontWeight:700, fontSize:"16px"}}>2024.01.24</p>
                   </div>
                 </div>
               </CardContent>

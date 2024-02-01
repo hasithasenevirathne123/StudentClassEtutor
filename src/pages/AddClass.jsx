@@ -25,6 +25,8 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  FormControl,
+  InputLabel,Select
 } from "@mui/material";
 import {  ExpandMore } from "@mui/icons-material";
 import MuiAppBar from "@mui/material/AppBar";
@@ -70,6 +72,7 @@ import pic4 from './assets/4.png'
 import pic5 from './assets/5.png'
 import pic6 from './assets/6.png'
 import pic7 from './assets/7.png'
+import computer from './assets/computer.png'
 
 const drawerWidth = 240;
 
@@ -194,23 +197,47 @@ function ResponsiveDrawer(props) {
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
-    const options = ['Grade9', 'Grade10', 'Grade11',  
-    'Grade 12'] 
+    // const options = ['Grade9', 'Grade10', 'Grade11',  
+    // 'Grade 12'] 
+
+    const Grade = [
+      { value: 'Grade10', label: 'Grade10' },
+      { value: 'Grade11', label: 'Grade11' },
+      { value: 'Grade12', label: 'Grade12' },
+    ];
+  
+    const [selectedGrade, setSelectedGrade] = useState(Grade[0].value);
+  
+    const handleGradeChange = (value) => {
+      setSelectedGrade(value);
+    };
+
+
+    const Stream = [
+      { value: 'Maths', label: 'Maths' },
+      { value: 'ICT', label: 'ICT' },
+      { value: 'Biology', label: 'Biology' },
+    ];
+  
+    const [selectedStream, setSelectedStream] = useState(Grade[0].value);
+  
+    const handleStreamChange = (value) => {
+      setSelectedGrade(value);
+    };
 
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar 
-     style={{ backgroundColor:"#F5F5F5", boxShadow:"none" }}
-     position="fixed"
-     sx={{
-       width: { sm: `calc(100% - ${drawerWidth}px)` },
-       ml: { sm: `${drawerWidth}px` },
-      
-     }}
+      <AppBar
+        style={{ backgroundColor: "#F5F5F5", boxShadow: "none" }}
+        position="fixed"
+        sx={{
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          ml: { sm: `${drawerWidth}px` },
+        }}
       >
-      <Toolbar>
-      <IconButton
+        <Toolbar>
+          <IconButton
             color=""
             aria-label="open drawer"
             edge="start"
@@ -220,7 +247,14 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
           <>
-            <Typography sx={{ fontSize: "2rem",fontFamily:"Plus Jakarta Sans",fontWeight:"800", color:"black" }}>
+            <Typography
+              sx={{
+                fontSize: "36px",
+                fontFamily: "Poppins, sans-serif",
+                fontWeight: "800",
+                color: "black",
+              }}
+            >
               Add Class
             </Typography>
           </>
@@ -242,20 +276,22 @@ function ResponsiveDrawer(props) {
             <NotificationsIcon style={{color:"black", backgroundColor:"white", height:"30px", borderRadius:"20px"}} />
           </Badge> */}
 
-            <Typography sx={{ marginLeft: "auto" }} variant="outlined" style={{color:"black"}}>
+            <Typography
+              sx={{ marginLeft: "auto" }}
+              variant="outlined"
+              style={{ color: "black" }}
+            >
               Naveen Pathiraja
             </Typography>
-          
-            <Avatar src={pic2} sx={{ marginLeft: "10px", backgroundColor:"#d96767" }} variant="contained"/>
-            
-           
+
+            <Avatar
+              src={pic2}
+              sx={{ marginLeft: "10px", backgroundColor: "#d96767" }}
+              variant="contained"
+            />
           </>
-       
-      </Toolbar>
-    </AppBar>
-
-
-
+        </Toolbar>
+      </AppBar>
 
       {/* <AppBar
         style={{ backgroundColor: "#F5F5F5", boxShadow:"none" }}
@@ -333,14 +369,322 @@ function ResponsiveDrawer(props) {
           flexGrow: 1,
           p: 3,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-          backgroundColor:"#F5F5F5",
-          height:"1000px"
+          backgroundColor: "#F5F5F5",
+          height: "1000px",
         }}
       >
         <Toolbar />
-        <Box sx={{ mt: 2, backgroundColor: "white", borderRadius: "20px" }}>
 
-        <Accordion defaultExpanded style={{borderRadius:"20px"}}>
+        <Grid sx={{mt:4}}
+          container
+          rowSpacing={1}
+          columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+        >
+          <Grid item lg={3} md={8} sm={12} xs={12}>
+            <div>
+              <label style={{fontFamily:"Poppins, sans-serif",fontweight:"500",fontSize:"16"}}>Select Your Grade</label>
+            </div>
+
+            <div>
+              <select style={{width:"221px", height:"49px", borderRadius:"10px", fontFamily:"Poppins, sans-serif", fontweight:"500", fontSize:"16px"}}>
+                <option value="">Grade 12</option>
+              </select>
+            </div>
+
+            </Grid>
+
+          <Grid item lg={6} md={6} sm={12} xs={12}>
+          <div>
+              <label style={{fontFamily:"Poppins, sans-serif",fontweight:"500",fontSize:"16"}}>Select Your Stream</label>
+            </div>
+
+            <div>
+              <select style={{width:"221px", height:"49px", borderRadius:"10px", fontFamily:"Poppins, sans-serif", fontweight:"500", fontSize:"16px"}}>
+                <option value="">Physical Science</option>
+              </select>
+            </div>
+
+            {/* <FormControl
+              sx={{
+                justifyContent: "center",
+                width: "221px",
+                height: "49px",
+                backgroundColor: "white",
+                borderRadius: "10px",
+                fontFamily: "Plus Jakarta Sans",
+              }}
+            >
+              <Select
+                labelId="dropdown-label"
+                id="dropdown"
+                value={selectedStream}
+              >
+                {Stream.map((Stream) => (
+                  <MenuItem key={Stream.value} value={Stream.value}>
+                    {Stream.label}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl> */}
+          </Grid>
+
+        </Grid>
+
+        <Grid flexDirection="row" sx={{ mt: 2 }}>
+
+          <Grid
+            container
+            gap={4}
+            style={{
+              justifyContent: "left",
+              border: "10px",
+              marginTop: "10px",
+            }}
+          >
+            <Grid item flexDirection="row">
+              <Card onClick={()=>navigate("/ViewSubject")}
+                sx={{ minWidth: 100, maxHeight: 500 }}
+                style={{ backgroundColor: "", borderRadius: "12px" }}
+              >
+                <CardContent style={{ height: "200px" }}>
+                  <CardMedia
+                    component="img"
+                    height="80%"
+                    weight="80%"
+                    image={img1}
+                  />
+                  <Typography
+                    color="#000000"
+                    fontFamily="Poppins, sans-serif"
+                    fontSize="20px"
+                    fontWeight="800"
+                  >
+                    Chemistry
+                  </Typography>
+                  <Typography variant="h2" component="div"></Typography>
+                  <Typography
+                    sx={{ mb: 1.5 }}
+                    color="text.secondary"
+                  ></Typography>
+                  <Typography variant="body2"></Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+
+            <Grid item flexDirection="row">
+              <Card
+                sx={{ minWidth: 100, maxHeight: 500 }}
+                style={{ backgroundColor: "", borderRadius: "12px" }}
+              >
+                <CardContent style={{ height: "200px" }}>
+                  <CardMedia
+                    component="img"
+                    height="80%"
+                    weight="80%"
+                    image={img2}
+                  />
+                  <Typography
+                   color="#000000"
+                   fontFamily="Poppins, sans-serif"
+                   fontSize="20px"
+                   fontWeight="800"
+                  >
+                    Physics
+                  </Typography>
+                  <Typography variant="h2" component="div"></Typography>
+                  <Typography
+                    sx={{ mb: 1.5 }}
+                    color="text.secondary"
+                  ></Typography>
+                  <Typography variant="body2"></Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+
+            <Grid item flexDirection="row">
+              <Card
+                sx={{ minWidth: 100, maxHeight: 500 }}
+                style={{ backgroundColor: "", borderRadius: "12px" }}
+              >
+                <CardContent style={{ height: "200px" }}>
+                  <CardMedia
+                    component="img"
+                    height="80%"
+                    weight="80%"
+                    image={img3}
+                  />
+                  <Typography
+                   color="#000000"
+                   fontFamily="Poppins, sans-serif"
+                   fontSize="20px"
+                   fontWeight="800"
+                  >
+                    Mathematics
+                  </Typography>
+                  <Typography variant="h2" component="div"></Typography>
+                  <Typography
+                    sx={{ mb: 1.5 }}
+                    color="text.secondary"
+                  ></Typography>
+                  <Typography variant="body2"></Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+           
+            <Grid item flexDirection="row">
+              <Card
+                sx={{ minWidth: 100, maxHeight: 500 }}
+                style={{ backgroundColor: "", borderRadius: "12px" }}
+              >
+                <CardContent style={{ height: "200px" }}>
+                  <CardMedia
+                    component="img"
+                    height="80%"
+                    weight="80%"
+                    image={computer}
+                  />
+                  <Typography
+                    color="#000000"
+                    fontFamily="Poppins, sans-serif"
+                    fontSize="20px"
+                    fontWeight="800"
+                  >
+                  ICT
+                  </Typography>
+                  <Typography variant="h2" component="div"></Typography>
+                  <Typography
+                    sx={{ mb: 1.5 }}
+                    color="text.secondary"
+                  ></Typography>
+                  <Typography variant="body2"></Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+
+            {/* <Grid item flexDirection="row">
+                  <Card
+                    sx={{ minWidth: 100, maxHeight: 500 }}
+                    style={{ backgroundColor: "", borderRadius: "12px" }}
+                  >
+                    <CardContent style={{ height: "200px" }}>
+                      <CardMedia
+                        component="img"
+                        height="80%"
+                        weight="80%"
+                        image={img4}
+                      />
+                      <Typography
+                        color="#000000"
+                        fontWeight={800}
+                        fontFamily="Plus Jakarta Sans"
+                        fontSize={20}
+                      >
+                        Biology
+                      </Typography>
+                      <Typography variant="h2" component="div"></Typography>
+                      <Typography
+                        sx={{ mb: 1.5 }}
+                        color="text.secondary"
+                      ></Typography>
+                      <Typography variant="body2"></Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+
+                <Grid item flexDirection="row">
+                  <Card
+                    sx={{ minWidth: 100, maxHeight: 500 }}
+                    style={{ backgroundColor: "", borderRadius: "12px" }}
+                  >
+                    <CardContent style={{ height: "200px" }}>
+                      <CardMedia
+                        component="img"
+                        height="80%"
+                        weight="80%"
+                        image={img3}
+                      />
+                      <Typography
+                        color="#000000"
+                        fontWeight={800}
+                        fontFamily="Plus Jakarta Sans"
+                        fontSize={20}
+                      >
+                        Mathematics
+                      </Typography>
+                      <Typography variant="h2" component="div"></Typography>
+                      <Typography
+                        sx={{ mb: 1.5 }}
+                        color="text.secondary"
+                      ></Typography>
+                      <Typography variant="body2"></Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+
+                <Grid item flexDirection="row">
+                  <Card
+                    sx={{ minWidth: 100, maxHeight: 500 }}
+                    style={{ backgroundColor: "", borderRadius: "12px" }}
+                  >
+                    <CardContent style={{ height: "200px" }}>
+                      <CardMedia
+                        component="img"
+                        height="80%"
+                        weight="80%"
+                        image={img1}
+                      />
+                      <Typography
+                        color="#000000"
+                        fontWeight={800}
+                        fontFamily="Plus Jakarta Sans"
+                        fontSize={20}
+                      >
+                        Chemistry
+                      </Typography>
+                      <Typography variant="h2" component="div"></Typography>
+                      <Typography
+                        sx={{ mb: 1.5 }}
+                        color="text.secondary"
+                      ></Typography>
+                      <Typography variant="body2"></Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+
+                <Grid item flexDirection="row">
+                  <Card
+                    sx={{ minWidth: 100, maxHeight: 500 }}
+                    style={{ backgroundColor: "", borderRadius: "12px" }}
+                  >
+                    <CardContent style={{ height: "200px" }}>
+                      <CardMedia
+                        component="img"
+                        height="80%"
+                        weight="80%"
+                        image={img3}
+                      />
+                      <Typography
+                        color="#000000"
+                        fontWeight={800}
+                        fontFamily="Plus Jakarta Sans"
+                        fontSize={20}
+                      >
+                        Mathematics
+                      </Typography>
+                      <Typography variant="h2" component="div"></Typography>
+                      <Typography
+                        sx={{ mb: 1.5 }}
+                        color="text.secondary"
+                      ></Typography>
+                      <Typography variant="body2"></Typography>
+                    </CardContent>
+                  </Card>
+                </Grid> */}
+          </Grid>
+        </Grid>
+
+        <Box sx={{ mt: 2, backgroundColor: "white", borderRadius: "20px" }}>
+          {/* <Accordion defaultExpanded style={{borderRadius:"20px"}}>
             <AccordionSummary
               expandIcon={<ExpandMore />}
               aria-controls="panel1-content"
@@ -351,473 +695,16 @@ function ResponsiveDrawer(props) {
 
             </AccordionSummary>
             <AccordionDetails>
-            <Grid>
-              <Grid
-                container
-                gap={4}
-                style={{ justifyContent: "center", border: "10px", padding:"20px" }}
-              >
-                <Grid item flexDirection="row">
-                  <Card
-                    sx={{ minWidth: 100, maxHeight: 500 }}
-                    style={{ backgroundColor: "#F9E788", borderRadius: "12px" }}
-                  >
-                    <CardContent style={{ height: "200px" }}>
-                      <CardMedia
-                        component="img"
-                        height="80%"
-                        weight="80%"
-                        image={img1}
-                      />
-                      <Typography
-                        color="#000000"
-                        fontWeight={800}
-                        fontFamily="Plus Jakarta Sans"
-                        fontSize={20}
-                      >
-                        Chemistry
-                      </Typography>
-                      <Typography variant="h2" component="div"></Typography>
-                      <Typography
-                        sx={{ mb: 1.5 }}
-                        color="text.secondary"
-                      ></Typography>
-                      <Typography variant="body2"></Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-
-                <Grid item flexDirection="row">
-                  <Card
-                    sx={{ minWidth: 100, maxHeight: 500 }}
-                    style={{ backgroundColor: "#B4DEF0", borderRadius: "12px" }}
-                  >
-                    <CardContent style={{ height: "200px" }}>
-                      <CardMedia
-                        component="img"
-                        height="80%"
-                        weight="80%"
-                        image={img2}
-                      />
-                      <Typography
-                        color="#000000"
-                        fontWeight={800}
-                        fontFamily="Plus Jakarta Sans"
-                        fontSize={20}
-                      >
-                        Physics
-                      </Typography>
-                      <Typography variant="h2" component="div"></Typography>
-                      <Typography
-                        sx={{ mb: 1.5 }}
-                        color="text.secondary"
-                      ></Typography>
-                      <Typography variant="body2"></Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-
-                <Grid item flexDirection="row">
-                  <Card
-                    sx={{ minWidth: 100, maxHeight: 500 }}
-                    style={{ backgroundColor: "#F6A695", borderRadius: "12px" }}
-                  >
-                    <CardContent style={{ height: "200px" }}>
-                      <CardMedia
-                        component="img"
-                        height="80%"
-                        weight="80%"
-                        image={img3}
-                      />
-                      <Typography
-                        color="#000000"
-                        fontWeight={800}
-                        fontFamily="Plus Jakarta Sans"
-                        fontSize={20}
-                      >
-                        Mathematics
-                      </Typography>
-                      <Typography variant="h2" component="div"></Typography>
-                      <Typography
-                        sx={{ mb: 1.5 }}
-                        color="text.secondary"
-                      ></Typography>
-                      <Typography variant="body2"></Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-
-                <Grid item flexDirection="row">
-                  <Card
-                    sx={{ minWidth: 100, maxHeight: 500 }}
-                    style={{ backgroundColor: "#F9E788", borderRadius: "12px" }}
-                  >
-                    <CardContent style={{ height: "200px" }}>
-                      <CardMedia
-                        component="img"
-                        height="80%"
-                        weight="80%"
-                        image={img4}
-                      />
-                      <Typography
-                        color="#000000"
-                        fontWeight={800}
-                        fontFamily="Plus Jakarta Sans"
-                        fontSize={20}
-                      >
-                        Biology
-                      </Typography>
-                      <Typography variant="h2" component="div"></Typography>
-                      <Typography
-                        sx={{ mb: 1.5 }}
-                        color="text.secondary"
-                      ></Typography>
-                      <Typography variant="body2"></Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-
-                <Grid item flexDirection="row">
-                  <Card
-                    sx={{ minWidth: 100, maxHeight: 500 }}
-                    style={{ backgroundColor: "#F9E788", borderRadius: "12px" }}
-                  >
-                    <CardContent style={{ height: "200px" }}>
-                      <CardMedia
-                        component="img"
-                        height="80%"
-                        weight="80%"
-                        image={img3}
-                      />
-                      <Typography
-                        color="#000000"
-                        fontWeight={800}
-                        fontFamily="Plus Jakarta Sans"
-                        fontSize={20}
-                      >
-                        Mathematics
-                      </Typography>
-                      <Typography variant="h2" component="div"></Typography>
-                      <Typography
-                        sx={{ mb: 1.5 }}
-                        color="text.secondary"
-                      ></Typography>
-                      <Typography variant="body2"></Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-
-                <Grid item flexDirection="row">
-                  <Card
-                    sx={{ minWidth: 100, maxHeight: 500 }}
-                    style={{ backgroundColor: "#F9E788", borderRadius: "12px" }}
-                  >
-                    <CardContent style={{ height: "200px" }}>
-                      <CardMedia
-                        component="img"
-                        height="80%"
-                        weight="80%"
-                        image={img3}
-                      />
-                      <Typography
-                        color="#000000"
-                        fontWeight={800}
-                        fontFamily="Plus Jakarta Sans"
-                        fontSize={20}
-                      >
-                        Mathematics
-                      </Typography>
-                      <Typography variant="h2" component="div"></Typography>
-                      <Typography
-                        sx={{ mb: 1.5 }}
-                        color="text.secondary"
-                      ></Typography>
-                      <Typography variant="body2"></Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-
-                <Grid item flexDirection="row">
-                  <Card
-                    sx={{ minWidth: 100, maxHeight: 500 }}
-                    style={{ backgroundColor: "#F9E788", borderRadius: "12px" }}
-                  >
-                    <CardContent style={{ height: "200px" }}>
-                      <CardMedia
-                        component="img"
-                        height="80%"
-                        weight="80%"
-                        image={img1}
-                      />
-                      <Typography
-                        color="#000000"
-                        fontWeight={800}
-                        fontFamily="Plus Jakarta Sans"
-                        fontSize={20}
-                      >
-                        Chemistry
-                      </Typography>
-                      <Typography variant="h2" component="div"></Typography>
-                      <Typography
-                        sx={{ mb: 1.5 }}
-                        color="text.secondary"
-                      ></Typography>
-                      <Typography variant="body2"></Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-
-                <Grid item flexDirection="row">
-                  <Card
-                    sx={{ minWidth: 100, maxHeight: 500 }}
-                    style={{ backgroundColor: "#F9E788", borderRadius: "12px" }}
-                  >
-                    <CardContent style={{ height: "200px" }}>
-                      <CardMedia
-                        component="img"
-                        height="80%"
-                        weight="80%"
-                        image={img2}
-                      />
-                      <Typography
-                        color="#000000"
-                        fontWeight={800}
-                        fontFamily="Plus Jakarta Sans"
-                        fontSize={20}
-                      >
-                        Physics
-                      </Typography>
-                      <Typography variant="h2" component="div"></Typography>
-                      <Typography
-                        sx={{ mb: 1.5 }}
-                        color="text.secondary"
-                      ></Typography>
-                      <Typography variant="body2"></Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-
-                <Grid item flexDirection="row">
-                  <Card
-                    sx={{ minWidth: 100, maxHeight: 500 }}
-                    style={{ backgroundColor: "#F9E788", borderRadius: "12px" }}
-                  >
-                    <CardContent style={{ height: "200px" }}>
-                      <CardMedia
-                        component="img"
-                        height="80%"
-                        weight="80%"
-                        image={img3}
-                      />
-                      <Typography
-                        color="#000000"
-                        fontWeight={800}
-                        fontFamily="Plus Jakarta Sans"
-                        fontSize={20}
-                      >
-                        Mathematics
-                      </Typography>
-                      <Typography variant="h2" component="div"></Typography>
-                      <Typography
-                        sx={{ mb: 1.5 }}
-                        color="text.secondary"
-                      ></Typography>
-                      <Typography variant="body2"></Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-
-                <Grid item flexDirection="row">
-                  <Card
-                    sx={{ minWidth: 100, maxHeight: 500 }}
-                    style={{ backgroundColor: "#F9E788", borderRadius: "12px" }}
-                  >
-                    <CardContent style={{ height: "200px" }}>
-                      <CardMedia
-                        component="img"
-                        height="80%"
-                        weight="80%"
-                        image={img4}
-                      />
-                      <Typography
-                        color="#000000"
-                        fontWeight={800}
-                        fontFamily="Plus Jakarta Sans"
-                        fontSize={20}
-                      >
-                        Biology
-                      </Typography>
-                      <Typography variant="h2" component="div"></Typography>
-                      <Typography
-                        sx={{ mb: 1.5 }}
-                        color="text.secondary"
-                      ></Typography>
-                      <Typography variant="body2"></Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-
-                <Grid item flexDirection="row">
-                  <Card
-                    sx={{ minWidth: 100, maxHeight: 500 }}
-                    style={{ backgroundColor: "#F9E788", borderRadius: "12px" }}
-                  >
-                    <CardContent style={{ height: "200px" }}>
-                      <CardMedia
-                        component="img"
-                        height="80%"
-                        weight="80%"
-                        image={img2}
-                      />
-                      <Typography
-                        color="#000000"
-                        fontWeight={800}
-                        fontFamily="Plus Jakarta Sans"
-                        fontSize={20}
-                      >
-                        Physics
-                      </Typography>
-                      <Typography variant="h2" component="div"></Typography>
-                      <Typography
-                        sx={{ mb: 1.5 }}
-                        color="text.secondary"
-                      ></Typography>
-                      <Typography variant="body2"></Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-
-                <Grid item flexDirection="row">
-                  <Card
-                    sx={{ minWidth: 100, maxHeight: 500 }}
-                    style={{ backgroundColor: "#F9E788", borderRadius: "12px" }}
-                  >
-                    <CardContent style={{ height: "200px" }}>
-                      <CardMedia
-                        component="img"
-                        height="80%"
-                        weight="80%"
-                        image={img4}
-                      />
-                      <Typography
-                        color="#000000"
-                        fontWeight={800}
-                        fontFamily="Plus Jakarta Sans"
-                        fontSize={20}
-                      >
-                        Biology
-                      </Typography>
-                      <Typography variant="h2" component="div"></Typography>
-                      <Typography
-                        sx={{ mb: 1.5 }}
-                        color="text.secondary"
-                      ></Typography>
-                      <Typography variant="body2"></Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-
-                <Grid item flexDirection="row">
-                  <Card
-                    sx={{ minWidth: 100, maxHeight: 500 }}
-                    style={{ backgroundColor: "#F9E788", borderRadius: "12px" }}
-                  >
-                    <CardContent style={{ height: "200px" }}>
-                      <CardMedia
-                        component="img"
-                        height="80%"
-                        weight="80%"
-                        image={img3}
-                      />
-                      <Typography
-                        color="#000000"
-                        fontWeight={800}
-                        fontFamily="Plus Jakarta Sans"
-                        fontSize={20}
-                      >
-                        Mathematics
-                      </Typography>
-                      <Typography variant="h2" component="div"></Typography>
-                      <Typography
-                        sx={{ mb: 1.5 }}
-                        color="text.secondary"
-                      ></Typography>
-                      <Typography variant="body2"></Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-
-                <Grid item flexDirection="row">
-                  <Card
-                    sx={{ minWidth: 100, maxHeight: 500 }}
-                    style={{ backgroundColor: "#F9E788", borderRadius: "12px" }}
-                  >
-                    <CardContent style={{ height: "200px" }}>
-                      <CardMedia
-                        component="img"
-                        height="80%"
-                        weight="80%"
-                        image={img1}
-                      />
-                      <Typography
-                        color="#000000"
-                        fontWeight={800}
-                        fontFamily="Plus Jakarta Sans"
-                        fontSize={20}
-                      >
-                        Chemistry
-                      </Typography>
-                      <Typography variant="h2" component="div"></Typography>
-                      <Typography
-                        sx={{ mb: 1.5 }}
-                        color="text.secondary"
-                      ></Typography>
-                      <Typography variant="body2"></Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-
-                <Grid item flexDirection="row">
-                  <Card
-                    sx={{ minWidth: 100, maxHeight: 500 }}
-                    style={{ backgroundColor: "#F9E788", borderRadius: "12px" }}
-                  >
-                    <CardContent style={{ height: "200px" }}>
-                      <CardMedia
-                        component="img"
-                        height="80%"
-                        weight="80%"
-                        image={img3}
-                      />
-                      <Typography
-                        color="#000000"
-                        fontWeight={800}
-                        fontFamily="Plus Jakarta Sans"
-                        fontSize={20}
-                      >
-                        Mathematics
-                      </Typography>
-                      <Typography variant="h2" component="div"></Typography>
-                      <Typography
-                        sx={{ mb: 1.5 }}
-                        color="text.secondary"
-                      ></Typography>
-                      <Typography variant="body2"></Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-                
-              </Grid>
-            </Grid>
+    
             </AccordionDetails>
           </Accordion>
 
-          <Container>
+           <Container>
            
-          </Container>
+          </Container>  */}
         </Box>
 
-        <Box sx={{ mt: 2, backgroundColor: "white", borderRadius: "20px" }}>
+        {/* <Box sx={{ mt: 2, backgroundColor: "white", borderRadius: "20px" }}>
 
         <Accordion  style={{borderRadius:"20px"}}>
             <AccordionSummary
@@ -1295,6 +1182,7 @@ function ResponsiveDrawer(props) {
            
           </Container>
         </Box>
+
         <Box sx={{ mt: 2, backgroundColor: "white", borderRadius: "20px" }}>
 
         <Accordion style={{borderRadius:"20px"}}>
@@ -1772,8 +1660,7 @@ function ResponsiveDrawer(props) {
           <Container>
            
           </Container>
-        </Box>
-       
+        </Box> */}
       </Box>
     </Box>
   );

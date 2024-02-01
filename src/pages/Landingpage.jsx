@@ -40,7 +40,7 @@ const Landingpage = () => {
     <AppBar sx={{ background: "white", boxShadow:"none" }}>
       <Toolbar>
           <>
-            <Typography sx={{ fontSize: "2rem", paddingLeft: "10%", color:"black" }}>
+            <Typography style={{color:"black", fontWeight:"800",fontFamily:"Poppins, sans-serif",fontSize:"24px"}}>
               etutor
             </Typography>
           </>
@@ -50,21 +50,21 @@ const Landingpage = () => {
               value={value}
               onChange={handleChange}
               sx={{ marginLeft: "auto" }}
-              indicatorColor="#d96767"
+              
               textColor="inherit">
 
-              <Tab style={{color:"black"}} label="Home" />
-              <Tab style={{color:"black"}} label="Features" />
-              <Tab style={{color:"black"}} label="Pricing" />
-              <Tab style={{color:"black"}} label="About Us" />
+              <Tab style={{color:"black", fontWeight:"600",fontFamily:"Poppins, sans-serif",fontSize:"16px"}} label="Home" />
+              <Tab style={{color:"black", fontWeight:"600",fontFamily:"Poppins, sans-serif",fontSize:"16px"}} label="Features" />
+              <Tab style={{color:"black", fontWeight:"600",fontFamily:"Poppins, sans-serif",fontSize:"16px"}} label="Pricing" />
+              <Tab style={{color:"black", fontWeight:"600",fontFamily:"Poppins, sans-serif",fontSize:"16px"}} label="About Us" />
 
             </Tabs>
 
-            <Button onClick={()=>{ navigate("/loginpage") }} sx={{ marginLeft: "auto" }} variant="outlined" color="error">
+            <Button onClick={()=>{ navigate("/loginpage") }} sx={{ marginLeft: "auto" }} style={{ fontWeight:"800",fontFamily:"Poppins, sans-serif",fontSize:"16px"}} variant="text" color="error">
               Login
             </Button>
 
-            <Button sx={{ marginLeft: "10px", backgroundColor:"#d96767" }} variant="contained" color="error">
+            <Button sx={{ marginLeft: "10px", backgroundColor:"#d96767" }} style={{ fontWeight:"800",fontFamily:"Poppins, sans-serif",fontSize:"16px"}}  variant="contained" color="error">
              Register
             </Button>
           </>
@@ -85,8 +85,8 @@ const Landingpage = () => {
           {/* Right side: Text */}
           <Grid item xs={12} md={6}>
             <Typography
-              style={{ color: "#d96767", fontWeight: 600, marginTop: "20rem" }}
-              variant="h4"
+              style={{ color: "#d96767", fontWeight: 600, marginTop: "20rem", fontSize:"54px",fontFamily:"Poppins, sans-serif" }}
+             
               gutterBottom
             >
               EPOWERING MINDS TRANSFORMING FUTURE
@@ -101,7 +101,7 @@ const Landingpage = () => {
               <Button
                 color="error"
                 variant="outlined"
-                style={{ backgroundcolor: "#d96767", fontWeight: 500 }}
+                style={{ backgroundcolor: "#d96767", fontWeight: 700, fontFamily:"Poppins, sans-serif" }}
               >
                 REGISTER
               </Button>
